@@ -1,3 +1,4 @@
+// when updating versions, be sure to copy /src/naut_src.css to /scss/naut_src.scss
 // ------------------------------------------
 // VARIABLES
 // ------------------------------------------
@@ -8,7 +9,7 @@ $etsu-gold-trans: rgba(255,196,37,.6);
 
 // Deault NAUT Theme
 // https://github.com/Axel--/Naut-for-reddit
-@import "naut_custom";
+@import "naut_src";
 
 #sr-header-area{
 	background-color:$etsu-blue;
