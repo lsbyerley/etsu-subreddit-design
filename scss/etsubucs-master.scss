@@ -1,0 +1,158 @@
+// ------------------------------------------
+// VARIABLES
+// ------------------------------------------
+$etsu-blue:#0A2145;
+$etsu-gold:#FFC425;
+$etsu-blue-trans: rgba(10,33,69,.6);
+$etsu-gold-trans: rgba(255,196,37,.6);
+
+// Deault NAUT Theme
+// https://github.com/Axel--/Naut-for-reddit
+@import "naut_custom";
+
+#sr-header-area{
+	background-color:$etsu-blue;
+}
+#sr-header-area:hover .sr-bar a{
+	color:$etsu-gold;
+}
+body .btn, body button, .c-btn-primary{
+	background:$etsu-blue;
+}
+.btn:hover, button:hover, .c-btn-primary:hover{
+	background:$etsu-blue;
+	color: $etsu-gold;
+}
+button:hover{
+	color: $etsu-gold;
+	background:$etsu-blue;
+}
+a{
+	color: $etsu-blue;
+}
+#header{
+	/*height:292px;*/
+	background-position:100% -80px;
+}
+#header .pagename a{
+	color: $etsu-gold;
+}
+#header .tabmenu li a{
+	color: $etsu-gold;
+}
+#header-bottom-left{
+	top:inherit;
+	bottom:5px;
+}
+a:hover{
+	color: $etsu-gold;
+}
+.morelink{
+	background:$etsu-blue;
+}
+.morelink:hover {
+    background: $etsu-blue;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+}
+.morelink:hover a{
+	color: $etsu-gold;
+}
+
+.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title{
+	color: $etsu-blue;
+}
+body .content .sitetable .link .title a:hover{
+	color: $etsu-gold;
+}
+.link .entry .buttons li a:hover{
+	color: $etsu-gold;
+}
+.link .entry .buttons li a.comments{
+	color: $etsu-blue;
+}
+.titlebox .tagline a.flairselectbtn{
+	color: $etsu-blue;
+}
+.sidebox.create .morelink a{
+	color: $etsu-blue;
+}
+.side {
+    /*margin: 187px 16px 108px 0;*/
+}
+.side:after{
+	color: $etsu-blue;
+}
+.titlebox .fancy-toggle-button .active.add{
+	background: $etsu-blue;
+}
+.titlebox .fancy-toggle-button .active.remove{
+	background: $etsu-blue;
+}
+.titlebox .fancy-toggle-button .active.add:hover{
+	background: $etsu-blue;
+	color: $etsu-gold;
+}
+.titlebox .fancy-toggle-button .active.remove:hover{
+	background: $etsu-blue;
+	color: $etsu-gold;
+}
+.arrow.down:hover:after{
+	background: rgba(10, 33, 69, .8);
+}
+.link .score.likes{
+	color:$etsu-gold;
+}
+.organic-listing .help{
+	color:$etsu-blue;
+}
+.submit-page #newlink.submit.content .tabmenu.formtab a{
+	background: $etsu-blue;
+	color: #FFF;
+}
+.submit-page #newlink.submit.content .tabmenu.formtab li.selected a{
+	background: $etsu-blue;
+	color: $etsu-gold;
+}
+.submit-page #newlink.submit.content .tabmenu.formtab a:hover{
+	color: $etsu-gold;
+}
+
+.titlebox .md h5{
+	color: $etsu-gold;
+    background-color: $etsu-blue;
+	width: 100%!important;
+	line-height: 32px;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+}
+
+// STANDINGS MODULE
+.side .md table:nth-of-type(1){
+	width: 100%;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.side .md table:nth-of-type(1) thead{
+	background: #ccc;
+}
+.side .md table:nth-of-type(1) thead tr th:first-child{
+	text-align:left;
+	width: 40%;
+}
+
+.side .md table:nth-of-type(1) thead tr th{
+	text-align:center;
+}
+
+.side .md table:nth-of-type(1) tbody tr td:first-child{
+	text-align:left;
+	width: 40%;
+}
+
+.side .md table:nth-of-type(1) tbody tr td{
+	text-align:center;
+}
+// END STANDINGS MODULE
