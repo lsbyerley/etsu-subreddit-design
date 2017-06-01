@@ -2,6 +2,7 @@
 // ------------------------------------------
 // VARIABLES
 // ------------------------------------------
+
 $etsu-blue:#0A2145;
 $etsu-gold:#FFC425;
 $etsu-blue-trans: rgba(10,33,69,.6);
@@ -10,6 +11,11 @@ $etsu-gold-trans: rgba(255,196,37,.6);
 // Deault NAUT Theme
 // https://github.com/Axel--/Naut-for-reddit
 @import "naut_src";
+
+// keep until version 4.1
+.expando-button {
+	background-size: 264px 264px!important
+}
 
 #sr-header-area{
 	background-color:$etsu-blue;
@@ -31,19 +37,11 @@ button:hover{
 a{
 	color: $etsu-blue;
 }
-#header{
-	/*height:292px;*/
-	background-position:100% -80px;
-}
 #header .pagename a{
 	color: $etsu-gold;
 }
 #header .tabmenu li a{
 	color: $etsu-gold;
-}
-#header-bottom-left{
-	top:inherit;
-	bottom:5px;
 }
 a:hover{
 	color: $etsu-gold;
@@ -59,7 +57,11 @@ a:hover{
 	color: $etsu-gold;
 }
 
-.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title{
+.thing .title.loggedin.click, 
+.content .thing .title:visited, 
+.thing .title.click, 
+.thing .title.loggedin, 
+.thing .title{
 	color: $etsu-blue;
 }
 body .content .sitetable .link .title a:hover{
@@ -124,11 +126,47 @@ body .content .sitetable .link .title a:hover{
 	width: 100%!important;
 	line-height: 32px;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 12px;
 	text-align: center;
 }
 
-// STANDINGS MODULE
+// STICKIED/ANNOUNCEMENTS
+.stickied .thumbnail{
+	background: $etsu-blue;
+	background-position: -108px -48px;
+}
+
+.thumbnail.self {
+	background-position: -108px -48px;
+}
+
+//SIDEBAR LISTS
+.side .md ul{
+	padding-left:0;
+	list-style-type:none;
+	li{
+		padding: 0 0 10px 12px;
+		position: relative;
+		margin-left: 5px;
+		&::before{
+			color: $etsu-gold;
+			content: "*";
+			position: absolute;
+			left: 0;
+			top: 5px;
+			font-size: 20px;
+		}
+		a{
+			text-decoration: underline;
+			color:$etsu-blue;
+			&:hover{
+				color:$etsu-gold;
+			}
+		}
+	}
+}
+
+// SIDEBAR STANDINGS MODULE
 .side .md table:nth-of-type(1){
 	width: 100%;
     font-size: 10px;
@@ -141,7 +179,7 @@ body .content .sitetable .link .title a:hover{
 }
 .side .md table:nth-of-type(1) thead tr th:first-child{
 	text-align:left;
-	width: 40%;
+	width: 110px;
 }
 
 .side .md table:nth-of-type(1) thead tr th{
@@ -150,10 +188,36 @@ body .content .sitetable .link .title a:hover{
 
 .side .md table:nth-of-type(1) tbody tr td:first-child{
 	text-align:left;
-	width: 40%;
+	width: 110px;
 }
 
 .side .md table:nth-of-type(1) tbody tr td{
 	text-align:center;
 }
 // END STANDINGS MODULE
+
+// SIDEBAR ROSTER MODULE
+.side .md table:nth-of-type(2){
+	width: 100%;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.side .md table:nth-of-type(2) thead{
+	background: #ccc;
+}
+.side .md table:nth-of-type(2) thead tr th{
+	text-align:center;
+}
+.side .md table:nth-of-type(2) thead tr th:nth-child(2){
+	text-align:left;
+	width: 130px;
+}
+.side .md table:nth-of-type(2) tbody tr td{
+	text-align:center;
+}
+.side .md table:nth-of-type(2) tbody tr td:nth-child(2){
+	text-align:left;
+	width: 130px;
+}
+//END ROSTER MODULE
