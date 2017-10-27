@@ -9,6 +9,11 @@
   "author": "Lucas Byerley",
   "license": "ISC",
   "devDependencies": {
+    "async": "^0.2.10",
+    "cheerio": "^0.22.0",
+    "ejs": "^2.5.6",
+    "express": "~3.2.4",
+    "request": "^2.79.0",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",

@@ -1,4 +1,4 @@
 ETSU Subreddit Design
 ===============
 
-A customized version of the NAUT subreddit theme with ETSU colors.
+/r/ETSUBucs sidebar data and assets
