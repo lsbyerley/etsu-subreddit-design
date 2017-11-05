@@ -1,7 +1,8 @@
 // Load plugins
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    autoprefixer = require('autoprefixer'),
+    postcss = require('gulp-postcss'),
     cssnano = require('gulp-cssnano'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -12,10 +13,16 @@ var gulp = require('gulp'),
     del = require('del'),
     replace = require('gulp-replace');
 
+global.AUTOPREFIXER_BROWSERS = {
+    browsers: ['ie >= 9', 'last 2 versions', '> 0%'],
+    map: false
+}
+
 // Styles
 gulp.task('styles', function() {
     return sass('scss/etsubucs-master.scss', { style: 'expanded' })
-        .pipe(autoprefixer('last 2 version'))
+        //.pipe(autoprefixer('last 2 version'))
+        .pipe(postcss([ autoprefixer() ]))
         .pipe(replace('@charset "UTF-8";','')) // reddit does not like charset
         .pipe(gulp.dest('dist'))
         .pipe(rename({ suffix: '.min' }))
