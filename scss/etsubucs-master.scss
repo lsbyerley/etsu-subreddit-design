@@ -12,6 +12,10 @@ $etsu-gold-trans: rgba(255,196,37,.6);
 // https://github.com/Axel--/Naut-for-reddit
 @import "naut_src";
 
+// change subscribers text
+div.titlebox span.number:after {content: " Buccaneers";}
+.titlebox .users-online .number:after {content: " faithful online";}
+
 // keep until version 4.1
 .expando-button {
 	background-size: 264px 264px!important
@@ -57,10 +61,10 @@ a:hover{
 	color: $etsu-gold;
 }
 
-.thing .title.loggedin.click, 
-.content .thing .title:visited, 
-.thing .title.click, 
-.thing .title.loggedin, 
+.thing .title.loggedin.click,
+.content .thing .title:visited,
+.thing .title.click,
+.thing .title.loggedin,
 .thing .title{
 	color: $etsu-blue;
 }

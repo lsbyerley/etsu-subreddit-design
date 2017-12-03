@@ -2,6 +2,9 @@
   "name": "etsu-subreddit-design",
   "version": "1.0.0",
   "description": "design for ETSUBucs subreddit",
+  "scripts": {
+      "start": "node ./server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Axel--/Naut-for-reddit.git"
