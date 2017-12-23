@@ -4290,6 +4290,14 @@ body.listing-page > .content, body.other-discussions-page > .content, .comments-
     opacity: 0;
   }
 }
+div.titlebox span.number:after {
+  content: " Buccaneers";
+}
+
+.titlebox .users-online .number:after {
+  content: " faithful online";
+}
+
 .expando-button {
   background-size: 264px 264px !important;
 }
@@ -4318,6 +4326,19 @@ button:hover {
 
 a {
   color: #0A2145;
+}
+
+#header::before {
+  content: "2017 SoCon Champions";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  padding-top: 4rem;
+  font-size: 2rem;
+  text-shadow: 1px 2px 1px #000;
+  font-family: Lato,Arial,sans-serif;
 }
 
 #header .pagename a {

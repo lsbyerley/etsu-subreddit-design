@@ -52,6 +52,14 @@ app.get('/', function(req, res, next) {
 
 });
 
+app.get('/cbb-betting', function(req, res, next) {
+  etsuUtil.getCBBBetting(req, function(err, data) {
+    res.render('cbb-betting', {
+      data: data
+    })
+  })
+})
+
 var port = process.env.PORT || 8080;
 
 app.listen(port);

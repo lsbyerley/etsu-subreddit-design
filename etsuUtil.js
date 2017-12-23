@@ -2,15 +2,29 @@ var request      = require('request');
 var cheerio      = require('cheerio');
 var fs           = require('fs');
 
+exports.getCBBBetting = function(req, callback) {
+
+  var url = 'http://www.soconsports.com/standings/Standings.dbml?&DB_OEM_ID=4000&SPID=1798';
+  request(url, function(error, response, html){
+    if(!error){
+
+      
+
+      callback(null, data)
+    }
+  })
+
+}
+
 exports.getStandings = function(req, callback) {
-    
+
     var url = 'http://www.soconsports.com/standings/Standings.dbml?&DB_OEM_ID=4000&SPID=1798';
     request(url, function(error, response, html){
         if(!error){
-        
+
             var $ = cheerio.load(html),
                 standings = [];
-                
+
             $('table.standings-table tr').each(function(i, el) {
               if (i > 2) {
                 var tds = $(this).children();
@@ -23,28 +37,28 @@ exports.getStandings = function(req, callback) {
                 standings.push(standing);
               }
             })
-            
+
             callback(null, standings);
             //res.render('index', {standings: standings, hello:'hellotesting'});
-        
+
         } else {
             console.log(error);
         }
     });
-    
+
 }
 
 exports.getRoster = function(req, callback) {
-    
+
     var url = 'http://www.etsubucs.com/mbasketball/roster/';
     request(url, function(error, response, html){
         if(!error){
-        
+
             var $ = cheerio.load(html),
                 roster = [],
                 roster_tables = $('.table.roster'),
                 roster_table = roster_tables[0];
-            
+
             $(roster_table).find('tr').each(function(i, el) {
               if (i > 0) {
                 var tds = $(this).children();
@@ -58,9 +72,9 @@ exports.getRoster = function(req, callback) {
                 roster.push(player);
               }
             })
-                
+
             callback(null, roster);
-                
+
         } else {
             console.log(error);
         }
