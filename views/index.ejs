@@ -33,6 +33,21 @@
 
       			<br>
 
+            ##### 2017-18 Mens BBall Stats<br><br>
+            |Name|MPG|PTS|REB|AST|3P%|<br>
+      			|--- |--- |--- |--- |--- |--- |<br>
+      			<% data.stats.forEach(function(stat){%>
+      			|<%=stat.name%>
+            |<%=stat.mpg%>
+      			|<%=stat.ppg%>
+      			|<%=stat.rpg%>
+            |<%=stat.apg%>
+      			|<%=stat.tpp%>|
+      			<br>
+      			<% }) %>
+
+            <br>
+
       			##### 2017-18 Mens BBall Roster<br><br>
 
       			|Num|Name|Yr/Pos|Ht|<br>

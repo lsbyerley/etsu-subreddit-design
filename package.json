@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "design for ETSUBucs subreddit",
   "scripts": {
-      "start": "node ./server.js"
+    "start": "node ./server.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "autoprefixer": "^7.1.6",
+    "axios": "^0.17.1",
     "gulp-postcss": "^7.0.0"
   }
 }
