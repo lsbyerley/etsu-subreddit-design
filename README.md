@@ -1,4 +1,4 @@
-ETSU Subreddit Design
-===============
+/r/ETSUBucs subreddit design, assets, and sidebar data
+==========================================================
 
-/r/ETSUBucs sidebar data and assets
+https://www.reddit.com/r/ETSUBucs/
