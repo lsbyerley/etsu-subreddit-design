@@ -1,34 +1,43 @@
 // Load plugins
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('autoprefixer'),
     postcss = require('gulp-postcss'),
-    cssnano = require('gulp-cssnano'),
-    uglify = require('gulp-uglify'),
+    minifycss = require('gulp-cssnano'),
     rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    livereload = require('gulp-livereload'),
     del = require('del'),
     replace = require('gulp-replace');
 
+global.buildPath = './dist';
+global.srcPath = './scss';
 global.AUTOPREFIXER_BROWSERS = {
-    browsers: ['ie >= 9', 'last 2 versions', '> 0%'],
-    map: false
+    browsers: ['>1%'],
+    map: false,
+    flexbox: 'no-2009'
 }
 
-// Styles
+// -----------------------------------------
+// STYLES
+// -----------------------------------------
 gulp.task('styles', function() {
-    return sass('scss/etsubucs-master.scss', { style: 'expanded' })
-        //.pipe(autoprefixer('last 2 version'))
-        .pipe(postcss([ autoprefixer() ]))
-        .pipe(replace('@charset "UTF-8";','')) // reddit does not like charset
-        .pipe(gulp.dest('dist'))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(cssnano())
-        .pipe(gulp.dest('dist'))
-        .pipe(notify({ message: 'Styles task complete' }));
+
+  return gulp.src(`${global.srcPath}/etsubucs-master.scss`)
+    .pipe(sass())
+      .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(postcss([ autoprefixer(global.AUTOPREFIXER_BROWSERS) ]))
+      .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(replace('@charset "UTF-8";','')) // reddit does not like charset
+      .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(gulp.dest(`${global.buildPath}`))
+      .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(rename({ suffix: '.min' }))
+      .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(minifycss({autoprefixer: false}))
+      .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(gulp.dest(`${global.buildPath}`))
+      .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 // Clean
