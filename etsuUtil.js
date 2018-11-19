@@ -67,7 +67,7 @@ exports.getRoster = function(req, callback) {
 
 exports.getStatistics = function(req, callback) {
 
-  const url = 'https://www.sports-reference.com/cbb/schools/east-tennessee-state/2018.html'
+  const url = 'https://www.sports-reference.com/cbb/schools/east-tennessee-state/2019.html'
   axios.get(url).then((res) => {
 
     const $ = cheerio.load(res.data)
