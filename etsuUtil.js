@@ -79,7 +79,6 @@ exports.getStatistics = function(req, callback) {
     $(perGameStatsTable).find('tbody tr').each((i, el) => {
       const tds = $(el).children();
       const fullName = $(tds[1]).text();
-      if (fullName === 'Andre Edwards') { return true }
       const split = fullName.split(' ');
       const name = split[0].charAt(0) + '. ' + split[1]
       const playerStats = {
