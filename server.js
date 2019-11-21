@@ -1,6 +1,5 @@
 var express = require('express');
 var etsuUtil = require('./etsuUtil.js');
-var async = require('async');
 var app = express();
 
 app.set('view engine', 'ejs');
