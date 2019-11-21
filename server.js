@@ -1,17 +1,10 @@
-var http = require('http');
-var path = require('path');
 var express = require('express');
-var cheerio = require('cheerio');
-var request = require('request');
 var etsuUtil = require('./etsuUtil.js');
 var async = require('async');
 var app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/client'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(express.cookieParser());
 
 app.get('/', function(req, res, next) {
 
