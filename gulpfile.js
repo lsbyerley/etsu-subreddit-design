@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('autoprefixer'),
     postcss = require('gulp-postcss'),
-    minifycss = require('gulp-cssnano'),
+    cssnano = require('cssnano'),
     rename = require('gulp-rename'),
     notify = require('gulp-notify'),
     del = require('del'),
@@ -25,15 +25,13 @@ gulp.task('styles', function() {
   return gulp.src(`${global.srcPath}/etsubucs-master.scss`)
     .pipe(sass())
       .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-    .pipe(postcss([ autoprefixer(global.AUTOPREFIXER_BROWSERS) ]))
+    .pipe(postcss([ autoprefixer(global.AUTOPREFIXER_BROWSERS), cssnano() ]))
       .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     .pipe(replace('@charset "UTF-8";','')) // reddit does not like charset
       .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     .pipe(gulp.dest(`${global.buildPath}`))
       .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     .pipe(rename({ suffix: '.min' }))
-      .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-    .pipe(minifycss({autoprefixer: false}))
       .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     .pipe(gulp.dest(`${global.buildPath}`))
       .on('error', err => { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
