@@ -3,23 +3,25 @@ const cheerio = require('cheerio');
 
 exports.getStandings = async () => {
 
-  const url = 'http://www.soconsports.com/standings/Standings.dbml?&DB_OEM_ID=4000&SPID=1798';
+  const url = 'https://soconsports.com/standings.aspx?standings=32&path=mbball';
   const res = await axios.get(url);
   let standings = [];
   const $ = cheerio.load(res.data)
 
-  $('table.standings-table tr').each(function(i, el) {
-    if (i > 2) {
+  $('table.sidearm-standings-table tbody tr').each(function(i, el) {
+    //if (i > 1) {
       var tds = $(this).children();
       var standing = {
         "team": $(tds[0]).text().trim(),
-        "conf_record": $(tds[1]).text().trim(),
-        "overall_record": $(tds[6]).text().trim(),
-        "streak": $(tds[11]).text().trim()
+        "conf_record": $(tds[2]).text().trim(),
+        "overall_record": $(tds[9]).text().trim(),
+        "streak": $(tds[14]).text().trim()
       }
       standings.push(standing);
-    }
+    //}
   })
+
+  console.log(standings)
 
   return standings
 
