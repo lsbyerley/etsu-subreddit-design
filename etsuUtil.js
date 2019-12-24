@@ -21,8 +21,6 @@ exports.getStandings = async () => {
     //}
   })
 
-  console.log(standings)
-
   return standings
 
 }
