@@ -1,94 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" ng-app>
   <head>
     <title>Standings</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
   </head>
   <body>
     <div class="container">
-
       <div class="page-header">
         <h1>Markdown For /r/ETSUBucs Sidebar</h1>
-        <a href="http://markdowntables.mrvautin.com/">http://markdowntables.mrvautin.com/</a>
+        <a href="http://markdowntables.mrvautin.com/"
+          >http://markdowntables.mrvautin.com/</a
+        >
       </div>
 
       <div class="row">
-
         <div class="col-md-6">
-
           <div class="well">
+            ##### 2020-2021 Mens BBall SoCon Standings<br /><br />
 
-      			##### 2019-20 Mens BBall SoCon Standings<br><br>
+            |Team|CONF|OVERALL|Streak|<br />
+            |--- |--- |--- |--- |<br />
+            <% data.standings.forEach(function(standing){%> |<%=standing.team%>
+            |<%=standing.conf_record%> |<%=standing.overall_record%>
+            |<%=standing.streak%>|
+            <br />
+            <% }) %>
 
-      			|Team|CONF|OVERALL|Streak|<br>
-      			|--- |--- |--- |--- |<br>
-      			<% data.standings.forEach(function(standing){%>
-      			|<%=standing.team%>
-      			|<%=standing.conf_record%>
-      			|<%=standing.overall_record%>
-      			|<%=standing.streak%>|
-      			<br>
-      			<% }) %>
+            <br />
 
-      			<br>
+            ##### 2020-2021 Mens BBall Stats<br /><br />
+            |Name|MPG|PTS|REB|AST|3P%|<br />
+            |--- |--- |--- |--- |--- |--- |<br />
+            <% data.stats.forEach(function(stat){%> |<%=stat.name%>
+            |<%=stat.mpg%> |<%=stat.ppg%> |<%=stat.rpg%> |<%=stat.apg%>
+            |<%=stat.tpp%>|
+            <br />
+            <% }) %>
 
-            ##### 2019-20 Mens BBall Stats<br><br>
-            |Name|MPG|PTS|REB|AST|3P%|<br>
-      			|--- |--- |--- |--- |--- |--- |<br>
-      			<% data.stats.forEach(function(stat){%>
-      			|<%=stat.name%>
-            |<%=stat.mpg%>
-      			|<%=stat.ppg%>
-      			|<%=stat.rpg%>
-            |<%=stat.apg%>
-      			|<%=stat.tpp%>|
-      			<br>
-      			<% }) %>
+            <br />
 
-            <br>
+            ##### 2020-2021 Mens BBall Roster<br /><br />
 
-      			##### 2019-20 Mens BBall Roster<br><br>
+            |Num|Name|Yr/Pos|Ht|<br />
+            |--- |--- |--- |--- |<br />
+            <% data.roster.forEach(function(player){%> |<%=player.num%>
+            |<%=player.name%> |<%=player.year%> / <%=player.pos%>
+            |<%=player.height%>|
+            <br />
+            <% }) %>
 
-      			|Num|Name|Yr/Pos|Ht|<br>
-      			|--- |--- |--- |--- |<br>
-      			<% data.roster.forEach(function(player){%>
-      			|<%=player.num%>
-      			|<%=player.name%>
-      			|<%=player.year%> / <%=player.pos%>
-      			|<%=player.height%>|
-      			<br>
-      			<% }) %>
+            <br />
 
-            <br>
+            ##### Related Links<br /><br />
 
-      			##### Related Links<br><br>
+            * [ETSU Bucs Homepage](http://www.etsubucs.com/mbasketball/)<br />
+            * [ETSU Basketball
+            Recruits](http://www.verbalcommits.com/schools/east-tennessee-state)<br />
+            * [Buccaneer Nation](http://csnbbs.com/forumdisplay.php?fid=335)<br />
+            * [Mid-Major Top
+            25](http://www.collegeinsider.com/mens-mid-major-top-25.php)<br />
 
-      			* [ETSU Bucs Homepage](http://www.etsubucs.com/mbasketball/)<br>
-      			* [ETSU Basketball Recruits](http://www.verbalcommits.com/schools/east-tennessee-state)<br>
-      			* [Buccaneer Nation](http://csnbbs.com/forumdisplay.php?fid=335)<br>
-                * [Mid-Major Top 25](http://www.collegeinsider.com/mens-mid-major-top-25.php)<br>
+            <br />
 
-            <br>
+            ##### Mens BBall Facts<br /><br />
 
-      			##### Mens BBall Facts<br><br>
-
-      			* **Location**: Johnson City, TN<br>
-      			* **Arena**: Freedom Hall Civic Center<br>
-      			* **Conference**: Southern<br>
-      			* **Coach**: Steve Forbes<br>
-      			* **Inaugural Season**: 1918-19<br>
-      			* **NCAA Tournament Record**: 2-11<br>
-      			* 10 NCAA Tournament Appearances<br>
-      			* 10 Regular Season Titles<br>
-      			* 10 Conference Tournament Titles<br>
-      			* 2 NIT Appearances<br>
-
-    			</div>
-
-		    </div>
-	    </div>
-  </div>
+            * **Location**: Johnson City, TN<br />
+            * **Arena**: Freedom Hall Civic Center<br />
+            * **Conference**: Southern<br />
+            * **Coach**: Steve Forbes<br />
+            * **Inaugural Season**: 1918-19<br />
+            * **NCAA Tournament Record**: 2-11<br />
+            * 10 NCAA Tournament Appearances<br />
+            * 10 Regular Season Titles<br />
+            * 10 Conference Tournament Titles<br />
+            * 2 NIT Appearances<br />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
